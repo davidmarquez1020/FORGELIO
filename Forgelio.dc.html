@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="nocturne-styles.css">
+  <style>
+    :root {
+      --forge-bg: #17101f;
+      --forge-violet: #a34bff;
+      --forge-orange: #ff6a3d;
+      --forge-text-dim: #c9c2d6;
+    }
+    body { margin: 0; background: var(--forge-bg); }
+    .forge-grad-text {
+      background: linear-gradient(100deg, var(--forge-violet), var(--forge-orange));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .forge-grad-btn {
+      background: linear-gradient(90deg, var(--forge-violet), var(--forge-orange));
+      color: #17101f; box-shadow: 0 12px 32px rgba(163,75,255,0.35);
+    }
+  </style>
+</helmet>
+
+<div style="background: var(--forge-bg); min-height: 100vh; position: relative;">
+  <div style="position: absolute; top: -180px; left: -160px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(163,75,255,0.28), transparent 70%); pointer-events: none;"></div>
+  <div style="position: absolute; top: 120px; right: -200px; width: 560px; height: 560px; border-radius: 50%; background: radial-gradient(circle, rgba(255,106,61,0.22), transparent 70%); pointer-events: none;"></div>
+
+  <nav class="nav" style="position: relative; z-index: 2; max-width: 1300px; margin: 0 auto; padding: var(--space-4) var(--space-8);">
+    <div class="nav-brand forge-grad-text" style="font-size: 22px; letter-spacing: -0.5px;">forgelio</div>
+    <a href="#work" style="color: var(--color-text);">Work</a>
+    <a href="#services" style="color: var(--color-text);">Services</a>
+    <a href="#contact" style="color: var(--color-text);">Contact</a>
+    <a href="#contact" class="btn forge-grad-btn" style="border: none; font-weight: 700; padding: var(--space-3) var(--space-6);">Hire Me</a>
+  </nav>
+
+  <section style="position: relative; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 80px var(--space-8) 110px; text-align: center;">
+    <div class="tag tag-outline" style="border-color: var(--forge-orange); color: var(--forge-orange); margin-bottom: var(--space-6); font-family: var(--font-heading);">
+      FULL-STACK ENGINEER · AI-AUGMENTED DELIVERY
+    </div>
+    <h1 style="font-size: 68px; line-height: 1.04; letter-spacing: -2px; color: var(--color-text); margin: 0 0 var(--space-6);">
+      <span class="forge-grad-text">Forging ideas into reality.</span>
+    </h1>
+    <p style="font-size: 19px; line-height: 1.6; color: var(--forge-text-dim); max-width: 600px; margin: 0 auto var(--space-8);">Forgelio is a development studio — offering full-stack engineering for founders, powered by an AI-augmented build process. From eCommerce to Custom Applications: architected, shipped, and supported by one senior engineer.</p>
+    <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-4); margin-bottom: 56px;">
+      <a href="#contact" class="btn forge-grad-btn" style="border: none; font-weight: 700; font-size: 16px; padding: var(--space-3) var(--space-8);">Got an idea?  →</a>
+      <a href="#work" class="btn btn-secondary" style="font-size: 16px; padding: var(--space-3) var(--space-8);">See the work</a>
+    </div>
+
+    <div class="card elev-md" style="padding: 48px 40px; background: var(--color-surface); border-radius: var(--radius-lg);">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0;">
+        <sc-for list="{{ processSteps }}" as="step" hint-placeholder-count="3">
+          <div style="display: flex; align-items: center;">
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 14px; width: 160px;">
+              <div style="width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 26px; background: {{ step.iconBg }};">{{ step.icon }}</div>
+              <div style="font-family: monospace; font-size: 12px; letter-spacing: 1.5px; color: var(--forge-orange);">{{ step.kicker }}</div>
+              <div style="font-size: 17px; font-weight: 600; color: var(--color-text); text-align: center;">{{ step.label }}</div>
+              <div style="font-size: 13px; color: var(--forge-text-dim); text-align: center; line-height: 1.5;">{{ step.desc }}</div>
+            </div>
+            <sc-if value="{{ step.hasArrow }}" hint-placeholder-val="{{ true }}">
+              <div style="width: 56px; height: 2px; margin: 0 4px 90px; background: linear-gradient(90deg, var(--forge-violet), var(--forge-orange));"></div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 40px var(--space-8) 130px;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <div style="font-family: monospace; font-size: 13px; color: var(--forge-violet); letter-spacing: 2px; margin-bottom: var(--space-4);">SERVICES</div>
+      <h2 style="font-size: 40px; letter-spacing: -1.5px; color: var(--color-text); margin: 0 0 var(--space-4);">What I take off your plate.</h2>
+      <p style="font-size: 17px; color: var(--forge-text-dim); max-width: 560px; margin: 0 auto;">I build efficient applications with A.I - Having a Computer Engineering degree and corporate experience as a System Architect, I can properly execute ideas aided with A.I.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-6);">
+      <sc-for list="{{ features }}" as="f" hint-placeholder-count="4">
+        <div class="card elev-sm" style="padding: 30px; border-radius: var(--radius-lg);">
+          <div style="width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 21px; margin-bottom: var(--space-4); background: {{ f.iconBg }};">{{ f.icon }}</div>
+          <h3 class="card-title" style="font-size: 20px; margin-bottom: var(--space-2);">{{ f.title }}</h3>
+          <p class="card-body" style="color: var(--forge-text-dim); opacity: 1; margin-bottom: var(--space-4);">{{ f.desc }}</p>
+          <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+            <sc-for list="{{ f.tags }}" as="t" hint-placeholder-count="3">
+              <span class="tag tag-outline">{{ t }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top: var(--space-8); border-radius: var(--radius-lg); overflow: hidden; border: 1px solid rgba(163,75,255,0.35); box-shadow: 0 20px 60px rgba(163,75,255,0.12);">
+      <div style="display: grid; grid-template-columns: 1.3fr 2fr 1fr 1fr; gap: var(--space-6); padding: 22px var(--space-6); font-size: 15px; letter-spacing: 0.5px; font-weight: 700; color: #17101f; background: linear-gradient(100deg, var(--forge-violet), var(--forge-orange));">
+        <div>SERVICE</div><div>WHAT'S INCLUDED</div><div>PRICE</div><div>TYPICAL TIMELINE</div>
+      </div>
+      <sc-for list="{{ pricing }}" as="row" hint-placeholder-count="6">
+        <div style="display: grid; grid-template-columns: 1.3fr 2fr 1fr 1fr; gap: var(--space-6); padding: 26px var(--space-6); border-top: 1px solid rgba(163,75,255,0.18); color: var(--forge-text-dim); font-size: 16px; background: rgba(163,75,255,0.04);">
+          <div style="color: var(--forge-orange); font-weight: 600; font-size: 17px;">{{ row.service }}</div>
+          <div>{{ row.included }}</div>
+          <div class="forge-grad-text" style="font-weight: 700; font-size: 18px;">{{ row.price }}</div>
+          <div style="color: var(--forge-violet); font-weight: 600;">{{ row.timeline }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="work" style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 0 var(--space-8) 130px;">
+    <div style="text-align: center; margin-bottom: 56px;">
+      <div style="font-family: monospace; font-size: 13px; color: var(--forge-orange); letter-spacing: 2px; margin-bottom: var(--space-4);">SELECTED WORK</div>
+      <h2 style="font-size: 40px; letter-spacing: -1.5px; color: var(--color-text); margin: 0 0 var(--space-4);">Recent builds.</h2>
+      <p style="font-size: 17px; color: var(--forge-text-dim); max-width: 560px; margin: 0 auto;">A few systems shipped for founders in the last year.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6);">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="3">
+        <div class="card elev-sm" style="padding: 0; border-radius: var(--radius-lg); overflow: hidden;">
+          <div style="height: 140px; background: {{ p.imgBg }}; display: flex; align-items: center; justify-content: center; font-family: monospace; font-size: 12px; color: rgba(255,255,255,0.7); letter-spacing: 1px;">{{ p.imgLabel }}</div>
+          <div style="padding: 26px;">
+            <div class="tag tag-outline" style="margin-bottom: var(--space-3);">{{ p.tag }}</div>
+            <h3 class="card-title" style="font-size: 19px; margin-bottom: var(--space-2);">{{ p.title }}</h3>
+            <p class="card-body" style="color: var(--forge-text-dim); opacity: 1;">{{ p.desc }}</p>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section id="contact" style="position: relative; z-index: 2; max-width: 980px; margin: 0 auto 130px; padding: 0 var(--space-8); text-align: center;">
+    <div class="card elev-md" style="border-radius: var(--radius-lg); padding: 60px 46px; background: linear-gradient(120deg, rgba(163,75,255,0.14), rgba(255,106,61,0.1)); border: 1px solid rgba(163,75,255,0.3);">
+      <h2 style="font-size: 34px; letter-spacing: -1px; color: var(--color-text); margin: 0 0 var(--space-4);">Have an idea that needs building?</h2>
+      <p style="font-size: 17px; color: var(--forge-text-dim); margin: 0 0 var(--space-6);">I take on a limited number of engagements each quarter. Tell me what you're building — I'll reply within a day.</p>
+      <a href="mailto:david@forgelio.dev" class="btn forge-grad-btn" style="border: none; font-weight: 700; font-size: 16px; padding: var(--space-3) var(--space-8); display: inline-flex;">Get in touch →</a>
+    </div>
+  </section>
+
+  <footer style="position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: var(--space-6) var(--space-8); display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--color-divider);">
+    <div style="font-family: monospace; font-size: 13px; color: var(--color-neutral-500);">© 2026 Forgelio</div>
+    <div style="display: flex; gap: var(--space-6);">
+      <a href="#" style="color: var(--color-neutral-500); font-size: 14px;">Twitter</a>
+      <a href="#" style="color: var(--color-neutral-500); font-size: 14px;">GitHub</a>
+      <a href="#" style="color: var(--color-neutral-500); font-size: 14px;">Discord</a>
+    </div>
+  </footer>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      processSteps: [
+        { icon: '💡', iconBg: 'linear-gradient(135deg, #a34bff, #7a35c9)', kicker: 'STEP 01', label: 'Idea', desc: 'We scope the system and lock the plan.', hasArrow: true },
+        { icon: '🛠️', iconBg: 'linear-gradient(135deg, #b862ff, #ff8a5c)', kicker: 'STEP 02', label: 'Creation', desc: 'Architecture, code, and infra get built.', hasArrow: true },
+        { icon: '🚀', iconBg: 'linear-gradient(135deg, #ff6a3d, #d9451e)', kicker: 'STEP 03', label: 'Launch', desc: 'Shipped to production, live and supported.', hasArrow: false },
+      ],
+      features: [
+        { icon: '🧩', iconBg: 'linear-gradient(135deg, #b862ff, #ff6a3d)', title: 'SaaS & Applications', desc: 'Multi-tenant web apps from first login to production launch, architected to grow.', tags: ['React', 'Node.js', 'Postgres'] },
+        { icon: '🛒', iconBg: 'linear-gradient(135deg, #a34bff, #ff8a5c)', title: 'E-Commerce Websites', desc: 'Storefronts, checkout, and inventory built to convert and scale with your catalog.', tags: ['Shopify', 'Stripe', 'Headless'] },
+        { icon: '📊', iconBg: 'linear-gradient(135deg, #ff6a3d, #a34bff)', title: 'Data Pipelines & Dashboard Reporting', desc: 'ETL jobs, event streams, and analytics infrastructure that scale with your product, not against it.', tags: ['ETL', 'Queues', 'Monitoring'] },
+        { icon: '⚙️', iconBg: 'linear-gradient(135deg, #a34bff, #ff6a3d)', title: 'Internal Tools', desc: 'Admin dashboards, ops consoles, and back-office tools built to your data model, no scaffolding required.', tags: ['React', 'APIs', 'Dashboards'] },
+        { icon: '🔐', iconBg: 'linear-gradient(135deg, #ff6a3d, #d9451e)', title: 'Auth & Access Control', desc: 'Production-ready authentication, roles, and permissions wired into every route from day one.', tags: ['OAuth', 'RBAC', 'Sessions'] },
+        { icon: '💳', iconBg: 'linear-gradient(135deg, #a34bff, #7a35c9)', title: 'Billing & Payments', desc: 'Stripe integration, subscription logic, usage metering, and invoicing — generated and deployed automatically.', tags: ['Stripe', 'Webhooks', 'Postgres'] },
+      ],
+      pricing: [
+        { service: 'Ecommerce build — starter', included: 'Templated/customized store, standard checkout, product catalog', price: '$2,500–$6,000', timeline: '2–4 weeks' },
+        { service: 'Ecommerce build — custom', included: 'Fully custom storefront, custom checkout, inventory, third-party integrations', price: '$6,000–$15,000', timeline: '4–8 weeks' },
+        { service: 'Service/booking app', included: 'Auth, scheduling logic, admin dashboard, payments', price: '$4,000–$10,000', timeline: '4–6 weeks' },
+        { service: 'MVP development', included: 'Idea to launchable product, scoped sprint', price: '$5,000–$15,000', timeline: '4–8 weeks' },
+        { service: 'Hourly consulting', included: 'Ad hoc dev work, code review, technical advising', price: '$65–$85/hr', timeline: 'N/A' },
+        { service: 'Maintenance retainer', included: 'Bug fixes, updates, small feature requests', price: '$300–$800/mo', timeline: 'Ongoing' },
+      ],
+      projects: [
+        { imgBg: 'linear-gradient(135deg, #a34bff, #3d1a5c)', imgLabel: 'PRODUCT SCREENSHOT', tag: 'FinTech · SaaS', title: 'RetailHub', desc: 'Multi-tenant e-commerce platform with automated inventory sync and shipping.' },
+        { imgBg: 'linear-gradient(135deg, #ff6a3d, #5c2a1a)', imgLabel: 'PRODUCT SCREENSHOT', tag: 'Marketplace', title: 'ServicePro', desc: 'Booking + payments platform for service businesses, built in 6 weeks.' },
+        { imgBg: 'linear-gradient(135deg, #a34bff, #ff6a3d)', imgLabel: 'PRODUCT SCREENSHOT', tag: 'Internal Tools', desc: 'Ops dashboard replacing five spreadsheets for a logistics startup.', title: 'FleetOps' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>
